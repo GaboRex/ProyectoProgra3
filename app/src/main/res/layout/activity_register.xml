@@ -13,7 +13,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
@@ -31,15 +31,49 @@
         app:layout_constraintVertical_bias="0.104"
         app:srcCompat="@drawable/logo" />
 
+
+    <EditText
+        android:id="@+id/txtUserName"
+        android:layout_width="382dp"
+        android:layout_height="48dp"
+        android:hint="Nombre de usuario"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/txtEmail"
+        app:layout_constraintTop_toBottomOf="@+id/imageView16"
+        app:layout_constraintVertical_bias="0.673"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="40dp"
+        android:hint="Correo elecrónico"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/txtPass"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <EditText
+        android:id="@+id/txtPass"
+        android:layout_width="364dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="232dp"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="23dp" />
+
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        android:text="Registrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView16"
-        app:layout_constraintVertical_bias="0.773" />
+        app:layout_constraintTop_toTopOf="@+id/txtUserName"
+        app:layout_constraintVertical_bias="0.852" />
 </androidx.constraintlayout.widget.ConstraintLayout>
