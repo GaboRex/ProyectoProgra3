@@ -32,13 +32,14 @@
         app:title="El Ojo de Dios"
         tools:ignore="MissingConstraints" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonBuscar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/ButtonStyle"
+        android:layout_width="131dp"
+        android:layout_height="47dp"
         android:layout_marginBottom="88dp"
-        android:backgroundTint="@color/blue_2"
         android:text="BUSCAR!"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

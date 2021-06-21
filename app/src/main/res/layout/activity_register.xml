@@ -19,6 +19,20 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/fondo_splash" />
 
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar4"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:menu="@menu/toolbar_profile"
+        app:title="El Ojo de Dios"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
+
     <ImageView
         android:id="@+id/imageView16"
         android:layout_width="120dp"
@@ -28,20 +42,20 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.104"
+        app:layout_constraintVertical_bias="0.147"
         app:srcCompat="@drawable/logo" />
-
 
     <EditText
         android:id="@+id/txtUserName"
-        android:layout_width="382dp"
-        android:layout_height="48dp"
+        android:layout_width="370dp"
+        android:layout_height="54dp"
         android:hint="Nombre de usuario"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/txtEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView16"
-        app:layout_constraintVertical_bias="0.673"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintVertical_bias="0.673" />
 
     <EditText
         android:id="@+id/txtEmail"
@@ -51,7 +65,8 @@
         android:hint="Correo elecrónico"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/txtPass"
-        tools:layout_editor_absoluteX="20dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/txtPass"
@@ -61,19 +76,33 @@
         android:hint="Contraseña"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="23dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonRegistrar"
+        style="@style/ButtonStyle"
+        android:layout_width="156dp"
+        android:layout_height="48dp"
         android:layout_gravity="center_horizontal"
         android:paddingLeft="15dip"
         android:paddingRight="15dip"
         android:text="Registrar"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txtUserName"
         app:layout_constraintVertical_bias="0.852" />
+
+    <CheckBox
+        android:id="@+id/condiciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Acepto los términos y condiciones de la aplicación."
+        app:layout_constraintBottom_toTopOf="@+id/buttonRegistrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPass" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,8 @@ class LocationActivity : AppCompatActivity() {
     var buttonContinuar: Button? = null
     lateinit var spinner: Spinner
     lateinit var toolbar: androidx.appcompat.widget.Toolbar
-    val listOfLocations = listOf("Achumani", "Calacoto", "Los Pinos")
+    val listOfLocations = listOf("Achumani", "Calacoto", "Cota Cota", "Irpavi", "Los Pinos", "Mallasa",
+        "Miraflores", "Obrajes", "San Miguel", "San Pedro", "Sopocachi")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

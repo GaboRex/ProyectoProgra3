@@ -13,7 +13,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -55,12 +55,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonIniciarSesion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#338891"
+        style="@style/ButtonStyle"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
         android:text="INICIAR SESIÓN"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -68,12 +70,14 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
         app:layout_constraintVertical_bias="0.097" />
 
-    <Button
-        android:id="@+id/buttonIniciarSesion2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#338891"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonRegistrarse"
+        style="@style/ButtonStyle"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:padding="10dp"
         android:text="REGISTRARSE"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -81,12 +85,15 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonIniciarSesion"
         app:layout_constraintVertical_bias="0.095" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonGoogle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/ButtonStyle"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
         android:backgroundTint="#D32C00"
+        android:padding="10dp"
         android:text="INICIAR SESIÓN CON GOOGLE"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -94,14 +101,18 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonFacebook"
         app:layout_constraintVertical_bias="0.272" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonFacebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/ButtonStyle"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
         android:layout_marginTop="156dp"
-        android:backgroundTint="#173F75"
+        android:backgroundTint="#26399E"
+        android:padding="10dp"
         android:text="INICIAR SESIÓN CON FACEBOOK"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonIniciarSesion" />
 
@@ -110,6 +121,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="o"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/buttonFacebook"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -130,8 +142,8 @@
 
     <ImageView
         android:id="@+id/imageView13"
-        android:layout_width="38dp"
-        android:layout_height="39dp"
+        android:layout_width="41dp"
+        android:layout_height="38dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/editTextTextPassword"
         app:layout_constraintEnd_toStartOf="@+id/editTextTextPassword"
