@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_index_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AgrupacionMarilyn">
-        <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".ListViewActivity" />
+        <activity android:name=".PlaceOption"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".LocationActivity" />
         <activity android:name=".ProfileActivity" />

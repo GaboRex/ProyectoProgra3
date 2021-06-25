@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fondo_buscador" />
 
     <androidx.appcompat.widget.Toolbar
@@ -25,12 +25,11 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/toolbar_profile"
         app:title="El Ojo de Dios"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonBuscar"
@@ -42,34 +41,34 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.987" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/buscador"
         android:layout_width="235dp"
         android:layout_height="40dp"
-        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/round_shape"
         android:ems="10"
         android:hint="Busque un producto"
-        android:padding="10dp"
         android:inputType="textLongMessage"
+        android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonBuscar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.819" />
+        app:layout_constraintVertical_bias="0.856" />
 
     <ImageView
         android:id="@+id/imageView14"
         android:layout_width="39dp"
         android:layout_height="39dp"
-        app:tint="@color/blue_2"
+        android:layout_marginEnd="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/buscador"
         app:layout_constraintEnd_toEndOf="@+id/buscador"
         app:layout_constraintTop_toTopOf="@+id/buscador"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/buscar" />
+        app:srcCompat="@drawable/buscar"
+        app:tint="@color/blue_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

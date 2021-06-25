@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.*
 
 class LocationActivity : AppCompatActivity() {
-    var buttonContinuar: Button? = null
+    lateinit var buttonContinuar: Button
     lateinit var spinner: Spinner
     lateinit var toolbar: androidx.appcompat.widget.Toolbar
     val listOfLocations = listOf("Achumani", "Calacoto", "Cota Cota", "Irpavi", "Los Pinos", "Mallasa",
@@ -19,7 +19,7 @@ class LocationActivity : AppCompatActivity() {
         buttonContinuar = findViewById(R.id.buttonContinuar)
         spinner = findViewById(R.id.spinner)
 
-        buttonContinuar?.setOnClickListener {
+        buttonContinuar.setOnClickListener {
             val intent = Intent(this, SearchActivity::class.java)
             startActivity(intent)
         }

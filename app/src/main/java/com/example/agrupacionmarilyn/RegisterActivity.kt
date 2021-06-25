@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.Toast
 
 class RegisterActivity : AppCompatActivity() {
-    var buttonRegister: Button? = null
+    lateinit var buttonRegister: Button
     lateinit var toolbar: androidx.appcompat.widget.Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,12 +16,13 @@ class RegisterActivity : AppCompatActivity() {
 
         buttonRegister = findViewById(R.id.buttonRegistrar)
 
-        buttonRegister?.setOnClickListener {
+        buttonRegister.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
-        toolbar = findViewById(R.id.toolbar)
+        toolbar = findViewById(R.id.toolbar4)
+
         toolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.menu_item_acerca_de -> {
