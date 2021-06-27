@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "357256531109",
+    "project_id": "el-ojo-de-dios-d7c80",
+    "storage_bucket": "el-ojo-de-dios-d7c80.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357256531109:android:2cabfdb950d5d85132514c",
+        "android_client_info": {
+          "package_name": "com.example.agrupacionmarilyn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357256531109-sevibdd5j0pqvuev1lu7c773tpkes2rl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2jCZQeo8iSCuxxSZgSTQPrQSPe25LeAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357256531109-sevibdd5j0pqvuev1lu7c773tpkes2rl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
