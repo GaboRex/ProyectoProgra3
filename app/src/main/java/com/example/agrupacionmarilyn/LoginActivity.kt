@@ -3,16 +3,18 @@ package com.example.agrupacionmarilyn
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         setup()
-
     }
 
     private fun setup() {
@@ -27,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
                         if (it.isSuccessful) {
                             showLocation(it.result?.user?.email ?: "" )
                         } else {
-                            showAlert()
+                            showAlertRegister()
                         }
                     }
             }
@@ -41,23 +43,31 @@ class LoginActivity : AppCompatActivity() {
                         if (it.isSuccessful) {
                             showLocation(it.result?.user?.email ?: "")
                         } else {
-                            showAlert()
+                            showAlertLogin()
                         }
                     }
         }
     }
 
-    private fun showAlert() {
-
+    private fun showAlertLogin() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
-        builder.setMessage("Se ha producido un error autenticando el usuario")
+        builder.setMessage("El usuario no se encuentra registrado.")
         builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
 
-    private fun showLocation(email: String ) {
+    private fun showAlertRegister() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("El usuario ya se encuentra registrado.")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+    private fun showLocation(email: String) {
         val intent = Intent(this, LocationActivity::class.java).apply {
             putExtra("username", email)
             putExtra("email", email)
