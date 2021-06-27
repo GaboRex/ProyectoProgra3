@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AgrupacionMarilyn</string>
+    <string name="prefs_file">com.example.agrupacionmarilyn.PREFERENCE_FILE_KEY</string>
+
 </resources>
