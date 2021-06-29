@@ -5,6 +5,9 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/index"
@@ -12,8 +15,11 @@
         android:roundIcon="@mipmap/index"
         android:supportsRtl="true"
         android:theme="@style/Theme.AgrupacionMarilyn">
-        <activity android:name=".PlaceOption"
-            tools:ignore="Instantiatable"></activity>
+        <activity android:name=".ProductoLugar_Activity"></activity>
+        <activity android:name=".MapActivity" />
+        <activity
+            android:name=".PlaceOption"
+            tools:ignore="Instantiatable" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".SearchActivity" />
@@ -24,9 +30,14 @@
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAHWJiKsXGzv9Uvu03d-CAV5IUjl_KWOL0" />
     </application>
 
 </manifest>
