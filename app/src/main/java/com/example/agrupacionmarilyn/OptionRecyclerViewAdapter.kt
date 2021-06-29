@@ -9,14 +9,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class OptionRecyclerViewAdapter(val context: Context, val list: List<PlaceOption>): RecyclerView.Adapter<OptionsViewHolder>() {
+class OptionRecyclerViewAdapter(val context: Context, val list: MutableList<Lugares>): RecyclerView.Adapter<OptionsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OptionsViewHolder {
         val layoutInflater = LayoutInflater.from(context)
         val itemListView = layoutInflater.inflate(R.layout.layout_options_list_item, parent, false)
         return OptionsViewHolder(itemListView)
     }
 
-    var funcionPlaceOptionClick: ((menuOption: PlaceOption) -> Unit)? = null
+    var funcionPlaceOptionClick: ((menuOption: Lugares) -> Unit)? = null
 
     override fun onBindViewHolder(holder: OptionsViewHolder, position: Int) {
         holder.bind(list[position])
@@ -34,7 +34,7 @@ class OptionRecyclerViewAdapter(val context: Context, val list: List<PlaceOption
         return list.size
     }
 
-    fun setOnMenuOptionClickListener(funcion: (placeOption: PlaceOption) -> Unit) {
+    fun setOnMenuOptionClickListener(funcion: (lugares: Lugares) -> Unit) {
         funcionPlaceOptionClick = funcion
     }
 }
@@ -45,9 +45,9 @@ class OptionsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     val imageView: ImageView = itemView.findViewById(R.id.imageView)
     val imageButton: ImageButton = itemView.findViewById(R.id.imageButton)
 
-    fun bind(menuOption: PlaceOption) {
-        textViewTitulo.text = menuOption.titulo
-        textViewSubtitulo.text = menuOption.subtitulo
-        imageView.setImageResource(menuOption.icono)
+    fun bind(menuOption: Lugares) {
+        textViewTitulo.text = menuOption.nombre
+        textViewSubtitulo.text = menuOption.tipoDeLugar
+        //imageView.setImageResource(menuOption.imagen)
     }
 }
