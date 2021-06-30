@@ -198,7 +198,7 @@ class DatabaseController(val context: Context): SQLiteOpenHelper(context, "Ojode
         return listaLugares
     }
 
-    fun obtenerLatitud(lugar: String, zona: String): String {
+    fun obtenerLatitud(lugar: String?, zona: String): String {
         val cursor = readableDatabase.rawQuery("Select latitud\n" +
                 "from Lugares\n" +
                 "where Lugares.nombre like \"%${lugar}%\"\n" +
@@ -211,7 +211,7 @@ class DatabaseController(val context: Context): SQLiteOpenHelper(context, "Ojode
         return latitud
     }
 
-    fun obtenerLongitud(lugar: String, zona: String): String {
+    fun obtenerLongitud(lugar: String?, zona: String): String {
         val cursor = readableDatabase.rawQuery("Select longitud\n" +
                 "from Lugares\n" +
                 "where Lugares.nombre like \"%${lugar}%\"\n" +

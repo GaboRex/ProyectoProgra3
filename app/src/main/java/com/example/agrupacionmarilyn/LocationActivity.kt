@@ -47,5 +47,19 @@ class LocationActivity : AppCompatActivity(){
             true
         }
 
+        toolbar = findViewById(R.id.toolbar)
+        toolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.menu_item_acerca_de -> {
+                    Toast.makeText(this, "Click en Acerca de", Toast.LENGTH_SHORT).show()
+                }
+                R.id.menu_item_perfil -> {
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
+
     }
 }

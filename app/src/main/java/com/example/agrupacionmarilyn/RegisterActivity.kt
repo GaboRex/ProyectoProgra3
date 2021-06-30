@@ -21,7 +21,7 @@ class RegisterActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        toolbar = findViewById(R.id.toolbar4)
+        toolbar = findViewById(R.id.toolbarMap)
 
         toolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
