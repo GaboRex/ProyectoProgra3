@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 class RecyclerViewActivity : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
     lateinit var toolbar: androidx.appcompat.widget.Toolbar
-    private lateinit var placeOptionsList: MutableList<Lugares>
     val databaseController = DatabaseController(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +18,8 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerView)
 
-        val adapter = OptionRecyclerViewAdapter(this, placeOptionsList)
+        val adapter = OptionRecyclerViewAdapter(this, databaseController.obtenerLugares())
+        Toast.makeText(this, "Click en ${databaseController.obtenerLugares()}", Toast.LENGTH_SHORT).show()
         val layoutManager = LinearLayoutManager(this)
 
         recyclerView.adapter = adapter
@@ -42,9 +42,5 @@ class RecyclerViewActivity : AppCompatActivity() {
             }
             true
         }
-    }
-
-    fun mostrarLugares(zona: String){
-            placeOptionsList = databaseController.obtenerLugares(zona)
     }
 }
