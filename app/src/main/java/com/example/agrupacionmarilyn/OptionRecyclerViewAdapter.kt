@@ -16,7 +16,7 @@ class OptionRecyclerViewAdapter(val context: Context, val list: MutableList<Luga
         return OptionsViewHolder(itemListView)
     }
 
-    var funcionPlaceOptionClick: ((menuOption: Lugares) -> Unit)? = null
+    var funcionPlaceOptionClick: ((lugares: Lugares) -> Unit)? = null
 
     override fun onBindViewHolder(holder: OptionsViewHolder, position: Int) {
         holder.bind(list[position])
@@ -45,9 +45,9 @@ class OptionsViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     val imageView: ImageView = itemView.findViewById(R.id.imageView)
     val imageButton: ImageButton = itemView.findViewById(R.id.imageButton)
 
-    fun bind(menuOption: Lugares) {
-        textViewTitulo.text = menuOption.nombre
-        textViewSubtitulo.text = menuOption.tipoDeLugar
-        //imageView.setImageResource(menuOption.imagen)
+    fun bind(lugares: Lugares) {
+        textViewTitulo.text = lugares.nombre
+        textViewSubtitulo.text = lugares.tipoDeLugar
+        //imageView.setImageResource()
     }
 }
