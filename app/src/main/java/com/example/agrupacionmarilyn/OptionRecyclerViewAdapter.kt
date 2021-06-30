@@ -23,11 +23,6 @@ class OptionRecyclerViewAdapter(val context: Context, val list: MutableList<Luga
         holder.imageButton.setOnClickListener {
             funcionPlaceOptionClick?.invoke(list[position])
         }
-
-        // En todo el elemento
-//        holder.itemView.setOnClickListener {
-//            funcionMenuOptionClick?.invoke(list[position])
-//        }
     }
 
     override fun getItemCount(): Int {

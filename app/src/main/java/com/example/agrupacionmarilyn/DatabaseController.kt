@@ -175,13 +175,13 @@ class DatabaseController(val context: Context): SQLiteOpenHelper(context, "Ojode
         db.insert("Productos", null, contentVales)
     }
 
-    fun obtenerLugares(): MutableList<Lugares> {
+    fun obtenerLugaresPorZona(producto: String, zona: String): MutableList<Lugares> {
         val cursor = readableDatabase.rawQuery("SELECT * \n" +
                 "FROM Lugares\n" +
                 "INNER JOIN Productos\n" +
                 "ON Lugares.nro_producto = Productos.nro_producto\n" +
-                "WHERE Lugares.nro_producto = (SELECT nro_producto FROM Productos WHERE nombre LIKE \"%pizza%\")\n" +
-                "AND Lugares.zona = \"Los Pinos\"", arrayOf())
+                "WHERE Lugares.nro_producto = (SELECT nro_producto FROM Productos WHERE nombre LIKE \"%${producto}%\")\n" +
+                "AND Lugares.zona = \"${zona}\"", arrayOf())
         val listaLugares = mutableListOf<Lugares>()
         while(cursor.moveToNext()) {
             val nroLugar = cursor.getInt(0)
@@ -196,5 +196,43 @@ class DatabaseController(val context: Context): SQLiteOpenHelper(context, "Ojode
         }
         cursor.close()
         return listaLugares
+    }
+
+    fun obtenerLatitud(lugar: String, zona: String): String {
+        val cursor = readableDatabase.rawQuery("Select latitud\n" +
+                "from Lugares\n" +
+                "where Lugares.nombre like \"%${lugar}%\"\n" +
+                "and Lugares.zona like \"%${zona}%\"", arrayOf())
+        var latitud = String()
+        while(cursor.moveToNext()) {
+            latitud = cursor.getString(0)
+        }
+        cursor.close()
+        return latitud
+    }
+
+    fun obtenerLongitud(lugar: String, zona: String): String {
+        val cursor = readableDatabase.rawQuery("Select longitud\n" +
+                "from Lugares\n" +
+                "where Lugares.nombre like \"%${lugar}%\"\n" +
+                "and Lugares.zona like \"%${zona}%\"", arrayOf())
+        var longitud = String()
+        while(cursor.moveToNext()) {
+            longitud = cursor.getString(0)
+        }
+        cursor.close()
+        return longitud
+    }
+
+    fun obtenerDescripcion(producto: String): String {
+        val cursor = readableDatabase.rawQuery("Select longitud\n" +
+                "from Productos\n" +
+                "where Productos.nombre like \"%${producto}%\"", arrayOf())
+        var descrip = String()
+        while(cursor.moveToNext()) {
+            descrip = cursor.getString(0)
+        }
+        cursor.close()
+        return descrip
     }
 }

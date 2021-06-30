@@ -26,20 +26,12 @@ class LocationActivity : AppCompatActivity(){
 
         buttonContinuar.setOnClickListener {
             val intent = Intent(this, SearchActivity::class.java)
+            intent.putExtra("location", spinner.selectedItem as String)
             startActivity(intent)
         }
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, listOfLocations)
         spinner.adapter = adapter
-
-        /*spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onItemSelected(parent: AdapterView<*>, view: View, pos: Int, id: Long) {
-                listaLugares.mostrarLugares(adapter.getItem(pos)!!)
-            }
-
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-            }
-        }*/
 
         toolbar = findViewById(R.id.toolbar)
         toolbar.setOnMenuItemClickListener { menuItem ->
